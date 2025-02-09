@@ -1,0 +1,684 @@
+/* Reseta margens e paddings e define o fundo e a fonte padrão */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: #fff;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Estilo do cabeçalho */
+.header {
+    background-color: #0c0c0c;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #444;
+    position: relative;
+}
+
+/* Container do logo */
+.logo-container {
+    display: flex;
+    align-items: center; /* Alinha o logo verticalmente no centro */
+    justify-content: center; /* Alinha o logo horizontalmente no centro */
+    width: 100%; /* Garante que o container ocupe toda a largura disponível */
+    height: 100%; /* Se necessário, também pode ser ajustado */
+}
+
+/* Estilos do logo */
+.logo {
+    max-width: 150px; /* Limita a largura máxima do logo */
+    max-height: 50px; /* Limita a altura máxima do logo */
+}
+
+
+/* Botão do menu hambúrguer */
+.menu-toggle {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.menu-toggle .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px auto;
+    transition: 0.3s;
+}
+
+/* Botão "Cadastrar-se" */
+.register-button {
+    background-color: #ffffff;
+    color: #000000;
+    padding: 8px 16px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.register-button:hover {
+    background-color: #ffffff;
+    transform: translateY(-2px);
+}
+
+
+
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .header {
+        padding: 15px;
+    }
+
+    .logo {
+        max-width: 120px;
+    }
+
+    .social-button {
+        padding: 8px 16px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-content {
+        padding: 10px;
+    }
+
+    .social-buttons-wrapper {
+        padding: 10px;
+    }
+
+    .social-button {
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .logo {
+        max-width: 100px;
+    }
+}
+
+header {
+    margin-bottom: 20px; /* Ajuste esse valor conforme necessário */
+}
+
+.category-icon {
+    width: 50px; /* Ajuste conforme necessário */
+    height: auto; /* Mantém a proporção da imagem */
+}
+
+/* Contêiner para o vídeo */
+.video-container {
+    position: relative;
+    width: 100%; /* Faz o contêiner ocupar toda a largura da tela */
+    max-width: 800px; /* Limita a largura máxima */
+    margin: 0 auto; /* Centraliza o vídeo horizontalmente */
+    height: 450px; /* Ajuste a altura conforme necessário */
+    background-color: black; /* Fundo negro para garantir visibilidade */
+    border: 1px solid #000000; /* Borda para ajudar na visualização do contêiner */
+    overflow: hidden; /* Esconde qualquer conteúdo que ultrapasse o contêiner */
+}
+
+/* Estilo do vídeo */
+.video-container video {
+    width: 100%;
+    height: 100%; /* Faz o vídeo ocupar 100% da altura do contêiner */
+    object-fit: cover; /* Faz o vídeo se ajustar sem distorcer */
+    display: block; /* Remove espaços em branco ao redor do vídeo */
+}
+
+/* Estilo para ocultar controles do vídeo */
+video::-webkit-media-controls-panel,
+video::-webkit-media-controls-timeline,
+video::-moz-media-controls-timeline,
+video::-media-controls-timeline {
+    display: none; /* Esconde os controles no Chrome, Firefox e outros */
+}
+
+
+/* Estilo para ocultar os controles do vídeo */
+video::-webkit-media-controls-panel,
+video::-webkit-media-controls-timeline,
+video::-moz-media-controls-timeline,
+video::-media-controls-timeline {
+    display: none;
+}
+
+
+.separator {
+    border: none;
+    height: 1px;
+    background-color: white; /* Linha horizontal branca */
+    margin: 20px auto; /* Espaçamento acima e abaixo da linha */
+    width: 100%; /* Garantir que a linha ocupe a largura total */
+}
+
+/* Carregando a fonte local */
+@font-face {
+    font-family: 'MinhaFonte';
+    src: url('Fontes/ZTChintzy-Bold.ttf') format('truetype'); /* Ajuste o caminho conforme a localização da sua fonte */
+}
+
+/* Contêiner do título para centralização */
+.title {
+    text-align: center; /* Centraliza o conteúdo dentro do elemento */
+    margin: 20px 0; /* Espaçamento em cima e embaixo */
+}
+
+/* Estilos para o link dentro do título */
+.title a {
+    font-family: 'MinhaFonte', sans-serif; /* Aplicando a fonte personalizada */
+    font-size: 2em;
+    color: #eeff00;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    display: inline-block; /* Faz o link respeitar o alinhamento */
+}
+
+/* Mudança de cor no hover */
+.title a:hover {
+    color: #fff700;
+}
+
+
+
+.link-categories {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+
+/* Quick and dirty normalize hax */
+
+.container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3rem; /* Espaço abaixo da .container */
+  }
+  
+  .searchInputWrapper {
+    position: relative;
+  }
+  
+  .searchInput {
+    width: 30rem;
+    height: 2rem;
+    padding: 0 3rem 0 1rem; /* Espaço interno à direita para o ícone */
+    border-radius: 2rem;
+    border: none;
+    transition: transform 0.1s ease-in-out;
+  }
+  
+  ::placeholder {
+    color: #080808;
+  }
+  
+  /* Oculta o texto do placeholder ao focar */
+  :focus::placeholder {
+    text-indent: -999px;
+  }
+  
+  .searchInput:focus {
+    outline: none;
+    transform: scale(1.1);
+    transition: all 0.1s ease-in-out;
+  }
+  
+  .searchInputIcon {
+    position: absolute;
+    right: 1rem; /* Espaço entre o ícone e a borda direita */
+    top: 0.5rem;
+    color: #000000;
+    transition: all 0.1s ease-in-out;
+  }
+  
+  .container:focus-within > .searchInputWrapper > .searchInputIcon {
+    right: 0.5rem; /* Ajusta o ícone ao focar */
+  }
+  
+  /* Estilo para a seção de categorias */
+  .link-categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem; /* Espaço entre as categorias */
+    justify-content: center; /* Centraliza as categorias */
+    padding: 1rem;
+  }
+  
+  /* Estilos individuais das categorias */
+  .category {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    width: 180px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .category:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .category a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1.2em;
+    display: block;
+    margin-top: 10px;
+  }
+  
+  .category i {
+    font-size: 2.5em;
+    color: #007bff;
+  }
+  
+  /* Responsivo */
+  @media (max-width: 600px) {
+    .category {
+      width: 100%; /* Ajusta a largura para telas pequenas */
+    }
+  }
+  
+.sidebar {
+    position: fixed;
+    top: 100px; /* Ajuste conforme necessário */
+    width: 250px;
+    padding: 10px;
+    background-color: #f1f1f1;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar.left {
+    left: 10px;
+}
+
+.sidebar.right {
+    right: 10px;
+}
+
+.main-content {
+    margin: 0 270px; /* Espaço para os sidebars */
+}
+
+/* Estilos gerais para o container de colunas */
+.column-container {
+    display: flex;
+    flex-wrap: wrap; /* Permite quebrar as colunas para a linha seguinte */
+    justify-content: space-between;  /* Distribui as colunas com espaçamento adequado */
+    gap: 30px;  /* Ajuste o espaçamento horizontal e vertical entre as colunas */
+    margin-top: 20px;
+    max-width: 1200px;  /* Limita a largura máxima do container */
+    margin: 0 auto; /* Centraliza o container */
+    padding-left: 160px; /* Move o conteúdo ligeiramente para a direita */
+}
+
+/* Cada coluna ocupa 30% da largura, mas pode se ajustar */
+.column {
+    width: 30%;  /* Cada coluna ocupa 30% da largura */
+    box-sizing: border-box;  /* Inclui padding e borda no tamanho total da coluna */
+    margin-bottom: 20px; /* Ajusta o espaçamento vertical entre as colunas */
+}
+
+/* Ajusta o estilo dos títulos das colunas */
+.column h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+/* Estilo da lista de links */
+.column ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.column ul li {
+    margin: 5px 0; /* Ajusta o espaçamento entre os itens de lista */
+}
+
+.column ul li a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.column ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Ajuste responsivo para telas menores */
+@media (max-width: 768px) {
+    .column-container {
+        flex-direction: column; /* As colunas ficam empilhadas em telas menores */
+        align-items: center;  /* Centraliza as colunas */
+    }
+
+    .column {
+        width: 100%;  /* Cada coluna ocupa 100% da largura em telas pequenas */
+        margin-bottom: 20px; /* Mantém o espaçamento entre as colunas em telas pequenas */
+    }
+}
+
+/* Adicionando espaçamento entre as colunas da segunda linha */
+.column:nth-child(4),
+.column:nth-child(5),
+.column:nth-child(6) {
+    margin-top: 20px; /* Ajusta o espaçamento entre as colunas da segunda linha */
+}
+
+@font-face {
+    font-family: 'CustomFont'; /* Nome da fonte */
+    src: url('Fontes/ZTChintzy-Bold.ttf') format('truetype'); /* Caminho para a fonte .ttf */
+    font-weight: normal;
+    font-style: normal;
+}
+.column {
+    font-family: 'CustomFont', sans-serif; /* Adiciona a fonte personalizada */
+    width: 30%; /* Cada coluna ocupa 30% da largura */
+    box-sizing: border-box; /* Inclui padding e borda no tamanho total da coluna */
+    margin-bottom: 20px; /* Ajusta o espaçamento vertical entre as colunas */
+}
+
+
+/* Estilos para o retângulo */
+/* Estilos para o retângulo */
+.retangulo {
+    width: 100%; /* Faz o retângulo ocupar toda a largura da tela */
+    height: 150px; /* Altura do retângulo */
+    background-color: rgb(0, 0, 0);
+    padding: 20px;
+    text-align: center;
+    border-top: 2px solid #ffffff; /* Apenas a borda superior */
+    border-bottom: 2px solid #ffffff; /* Apenas a borda inferior */
+    border-radius: 10px; /* Mantém os cantos arredondados */
+    display: flex; /* Usando Flexbox para alinhar os links horizontalmente */
+    justify-content: space-around; /* Distribui os links uniformemente */
+    align-items: center; /* Alinha os links verticalmente no centro */
+    box-sizing: border-box; /* Garante que o padding seja incluído no cálculo da largura */
+}
+
+/* Estilos para os links */
+.retangulo a {
+    text-decoration: none;
+    color: inherit; /* Remove a cor específica e herda a cor padrão */
+    font-size: inherit; /* Remove o tamanho do texto específico */
+    background: none; /* Remove o fundo */
+    padding: 0; /* Remove o padding */
+    border: none; /* Remove a borda */
+    border-radius: 0; /* Remove os cantos arredondados */
+}
+
+/* Estilos para o hover nos links */
+.retangulo a:hover {
+    background: none; /* Garante que o fundo do hover também seja removido */
+}
+
+/* Estilos para a imagem dentro do retângulo */
+.retangulo img {
+    max-width: 100px; /* Define uma largura máxima para a imagem */
+    max-height: 100px; /* Define uma altura máxima para a imagem */
+    object-fit: contain; /* Garante que a proporção da imagem seja mantida */
+    margin: 0 10px; /* Adiciona espaçamento ao redor da imagem */
+}
+
+
+/* Estilos para o container de download */
+.download-container {
+    text-align: center;
+    padding: 30px;
+    background-color: #000000;
+    border: 5px solid #ffee01;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: 50px auto;
+}
+
+.download-container h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.download-container p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+/* Conteúdo do download com layout centralizado */
+.download-content {
+    display: flex;
+    flex-direction: column; /* Coloca a imagem em cima do botão */
+    align-items: center; /* Centraliza os itens */
+}
+
+.image-container {
+    width: 100px; /* Largura do container da imagem */
+    height: 100px; /* Altura do container da imagem */
+    border: 1px solid #000000; /* Borda opcional */
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centraliza a imagem */
+    margin-bottom: 10px; /* Espaço entre a imagem e o botão */
+}
+
+.app-image {
+    max-width: 100%; /* Para a imagem se ajustar ao container */
+    max-height: 100%; /* Para a imagem se ajustar ao container */
+    height: auto; /* Mantém a proporção da imagem */
+}
+
+/* Botão de download moderno e limpo */
+.download-btn {
+    display: inline-block;
+    background: #e5ff00; /* Cor de fundo */
+    color: #000000;
+    padding: 12px 24px;
+    font-size: 1.1em;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px; /* Borda arredondada */
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra leve ao redor do botão */
+}
+
+/* Contêiner principal */
+.imagem-container {
+    display: flex; /* Usando flexbox para organizar as imagens lado a lado */
+    justify-content: center; /* Centraliza as imagens no container */
+    align-items: center; /* Alinha verticalmente as imagens */
+    gap: 20px; /* Reduz o espaço entre as imagens */
+    padding: 20px; /* Adiciona espaçamento interno */
+}
+
+/* Estilo para a imagem do mascote (centralizada) */
+.mascot {
+    flex: 1; /* A imagem do mascote ocupa o restante do espaço disponível */
+    text-align: center; /* Garante que a imagem do mascote fique centralizada */
+}
+
+.mascot img {
+    max-width: 250px; /* Limita o tamanho máximo da imagem do mascote */
+    height: auto;
+}
+
+/* Adiciona responsividade para telas menores */
+@media (max-width: 768px) {
+    .imagem-container {
+        flex-direction: column; /* Empilha as imagens verticalmente em telas menores */
+        align-items: center; /* Centraliza as imagens */
+    }
+    .imagem-esquerda, .imagem-direita {
+        margin: 10px 0; /* Margem entre as imagens laterais em telas pequenas */
+    }
+}
+
+
+.download-btn:hover {
+    background: #ffffff; /* Cor de fundo ao passar o mouse */
+    transform: translateY(-2px); /* Leve elevação ao passar o mouse */
+}
+
+.download-btn:active {
+    background: #ffffff; /* Cor de fundo ao clicar */
+    transform: translateY(1px); /* Leve abaixamento ao clicar */
+}
+
+
+/* Reset de margens e paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.site-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.site-card {
+    background-color: #ffffff;
+    border: 1px solid #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.site-card:hover {
+    transform: scale(1.05);
+}
+
+.site-card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #000;
+}
+
+.site-card p {
+    margin-bottom: 10px;
+    color: #000;
+}
+
+.site-card button {
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.site-card button:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos gerais para a estrutura */
+
+/* Estilos do footer */
+.footer {
+    background-color: #111010;
+    color: #ffffff;
+    padding: 40px 20px; /* Aumenta o espaçamento para mais conforto visual */
+    text-align: center;
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Alinha os elementos de forma espaçada */
+    gap: 20px; /* Espaçamento entre as colunas */
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 200px; /* Define uma largura mínima para as colunas */
+    margin: 10px;
+}
+
+.footer-nav {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Espaçamento entre os links */
+}
+
+.footer-nav a {
+    color: #ffffff;
+    margin: 0;
+    text-decoration: none;
+    font-size: 14px; /* Ajusta o tamanho da fonte */
+    transition: color 0.3s;
+}
+
+.footer-nav a:hover {
+    text-decoration: underline;
+    color: #f0a500; /* Cor diferente ao passar o mouse */
+}
+
+.imagem-footer {
+    flex: 1; /* Isso faz com que a imagem ocupe o espaço disponível no meio */
+    text-align: center; /* Centraliza a imagem */
+}
+
+.imagem-footer img {
+    max-width: 150px; /* Limita o tamanho máximo da imagem */
+    height: auto;
+}
+
+.footer-copy {
+    margin-top: 20px;
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+.footer-socials {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.footer-socials a {
+    color: #ffffff;
+    font-size: 20px;
+    transition: color 0.3s;
+}
+
+.footer-socials a:hover {
+    color: #f0a500; /* Cor diferente para ícones de redes sociais */
+}
