@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acervo de Livros</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="estilo/library.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="icon" href="estilo/vizualizer/favicon.ico" type="image/x-icon" />
+</head>
+<body>
+
+  <!-- Cabeçalho -->
+<!-- Cabeçalho -->
+<header class="header">
+    <div class="logo">
+        <h1>REDE CLANDESTINA</h1>
+    </div>
+    <!-- Botão para Voltar à Página Inicial -->
+    <div class="back-button-container">
+        <a href="rc.html" class="back-button">Voltar</a>
+    </div>
+</header>
+
+
+    <!-- Barra de Busca -->
+<section class="search-section">
+    <div class="search-container">
+        <div class="search-input-wrapper">
+            <input type="text" placeholder="Buscar livros...">
+        </div>
+    </div>
+    <div class="filter-container">
+        <button class="filter-button">Mais Baixados</button>
+        <button class="filter-button">Ordem Alfabética</button>
+        <button class="filter-button">Misturados</button>
+    </div>
+</section>
+
+
+    <!-- Seção de Livros -->
+    <section class="books-section">
+        <div class="books-container" id="livros-container">
+            <!-- Livros serão inseridos aqui dinamicamente -->
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+        <p>&copy; 2025 Rede Clandestina. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="js/bootstrap.min.js"></script>
+
+    <script>
+        // Dados dos livros (apenas exemplo, você pode expandir com mais informações)
+        const livros = [
+            { titulo: "Programação em Python - AI assistente", imagem:  "estilo/Capas/ia.png", download: "estilo/Livros/enfermaria.pdf", visualizar: "estilo/Livros/enfermaria.pdf" },
+            { titulo: "Fudamentos da metematica II", imagem:  "estilo/Capas/matematica.png", download: "estilo/Livros", visualizar: "estilo/Livros" },
+            { titulo: "O homem mais rico da babilônia", imagem:  "estilo/Capas/Home rico.png", download: "estilo/Livros", visualizar: "estilo/Livros" },
+            { titulo: "Engenharia Reversa de Código Malicioso", imagem:  "estilo/Capas/Malwe.png", download: "estilo/Livros", visualizar: "estilo/Livros" },
+            { titulo: "Fundamentos da Psicanálise", imagem:  "estilo/Capas/Fudamentos da psicanalise.png", download: "estilo/Livros", visualizar: "estilo/Livros" },
+            { titulo: "HTML5 e CC3 Domine a web do futuro", imagem:  "estilo/Capas/htmlcss.png", download: "estilo/Livros", visualizar: "estilo/Livros" },
+            { titulo: "Programção Básica", imagem:  "estilo/Capas/Basica.png", download: "estilo/Livros", visualizar: "estilo/Livros" },
+            { titulo: "TCP IP Illustrado Voulume 1", imagem:  "estilo/Capas/TCP IP.png", download: "estilo/Livros", visualizar: "estilo/Livros" },
+            { titulo: "API Securança", imagem:  "estilo/Capas/injecao api.png", download: "estilo/Livros", visualizar: "estilo/Livros" },
+            { titulo: "Antivirus Hacker's", imagem: "estilo/Capas/antivirus.png", download: "estilo/Livros", visualizar: "estilo/Livros" },
+            { titulo: "Engenharia Social Na Pratica", imagem: "estilo/Capas/Social.png", download: "estilo/Livros", visualizar: "estilo/Livros" },
+            { titulo: "O Hacker Codex", imagem: "estilo/Capas/Codex.png", download: "estilo/Livros", visualizar: "estilo/Livros" },
+            { titulo: "A Indústria da Persuasão", imagem: "estilo/Capas/industria.png", download: "estilo/Livros", visualizar: "estilo/Livros" },
+            { titulo: "Como alongar o Penis", imagem: "estilo/Capas/penis.png", download: "estilo/Livros", visualizar: "estilo/Livros" },
+            { titulo: "A sociedade Industrial e seu futuro", imagem: "estilo/Capas/unabomber.png", download: "estilo/Livros", visualizar: "estilo/Livros" },
+            { titulo: "Aprendizado de maquina illustrado", imagem: "estilo/Capas/deep.png", download: "estilo/Livros", visualizar: "estilo/Livros" },
+            { titulo: "Como desenhar Caricaturas", imagem: "estilo/Capas/Caricaturas.png", download: "estilo/Livros", visualizar: "estilo/Livros" },
+            { titulo: "Fundamentos de Redes de Computadores", imagem: "estilo/Capas/redes.png", download: "estilo/Livros", visualizar: "estilo/Livros" },
+            { titulo: "Trojan Worms and Spywares", imagem: "estilo/Capas/Trojans.png", download: "estilo/Livros", visualizar: "estilo/Livros" },
+            { titulo: "PGP E GPG", imagem: "estilo/Capas/PGP.png", download: "#", visualizar: "estilo/Livros" },
+            { titulo: "HAcker Etico (CEH)v11", imagem: "estilo/Capas/Hacker.png", download: "estilo/Livros", visualizar: "estilo/Livros" },
+            { titulo: "Guia de Produçãi de Musica", imagem: "estilo/Capas/musica.png", download: "estilo/Livros", visualizar: "estilo/Livros" },
+            { titulo: "A arte Da Oratória", imagem: "estilo/Capas/oratoria.png", download: "estilo/Livros", visualizar: "estilo/Livros" },
+            { titulo: "Design de Interface", imagem: "estilo/Capas/interface.png", download: "estilo/Livros", visualizar: "estilo/Livros" },
+            { titulo: "Softwar", imagem: "estilo/Capas/bitcoin.png", download: "estilo/Livros/Softwar.pdf", visualizar: "estilo/Livros" },
+            { titulo: "Cripitografia moderna", imagem: "estilo/Capas/cripto.png", download: "estilo/Livros", visualizar: "estilo/Livros" },
+            { titulo: "Cybersegurança", imagem: "estilo/Capas/cyber.png", download: "estilo/Livros", visualizar: "estilo/Livros" },
+            { titulo: "Como programar android", imagem: "estilo/Capas/android.png", download: "estilo/Livros", visualizar: "estilo/Livros" },
+            { titulo: "Inglês em 50 dias", imagem: "estilo/Capas/ingles.png", download: "estilo/Livros", visualizar: "estilo/Livros" },
+            { titulo: "Psicologia das Cores", imagem: "estilo/Capas/cores.png", download: "estilo/Livros", visualizar: "estilo/Livros" },
+            { titulo: "Fundamentos da enfermagem", imagem: "estilo/Capas/enfermagem.png", download: "estilo/Livros", visualizar: "estilo/Livros" },
+            { titulo: "Automatize tarefas maçantes com python", imagem: "estilo/Capas/python.png", download: "estilo/Livros", visualizar: "estilo/Livros" },
+            { titulo: "Livro de Receitas Anarquistas", imagem: "estilo/Capas/livro.png", download: "estilo/Livros", visualizar: "estilo/Livros" }
+        ];
+
+        function carregarLivros() {
+    const container = document.getElementById("livros-container");
+
+    livros.forEach(livro => {
+        const divLivro = document.createElement("div");
+        divLivro.classList.add("book-card");
+
+        divLivro.innerHTML = `
+            <img src="${livro.imagem}" alt="Capa do Livro">
+            <h3>${livro.titulo}</h3>
+            <div class="buttons-container">
+                <button class="button download-button" data-download="${livro.download}">Download</button>
+                <button class="button view-button" data-view="${livro.visualizar}">Visualizar</button>
+            </div>
+        `;
+
+        container.appendChild(divLivro);
+    });
+
+    // Adiciona eventos de clique para os botões de download
+    document.querySelectorAll('.download-button').forEach(button => {
+        button.addEventListener('click', event => {
+            const link = event.target.getAttribute('data-download');
+            if (link) {
+                const a = document.createElement('a'); // Cria um elemento de link temporário
+                a.href = link;
+                a.download = link.split('/').pop(); // Define o nome do arquivo como o nome do arquivo no link
+                document.body.appendChild(a);
+                a.click(); // Simula o clique no link
+                document.body.removeChild(a); // Remove o elemento temporário
+            } else {
+                alert('Link de download não disponível.');
+            }
+        });
+    });
+
+    // Adiciona eventos de clique para os botões de visualização
+    document.querySelectorAll('.view-button').forEach(button => {
+        button.addEventListener('click', event => {
+            const link = event.target.getAttribute('data-view');
+            if (link) {
+                window.open(link, '_blank'); // Abre o link em uma nova guia
+            } else {
+                alert('Link de visualização não disponível.');
+            }
+        });
+    });
+}
+
+// Carregar livros quando a página for carregada
+window.onload = carregarLivros;
+
+    </script>
+
+</body>
+</html>
